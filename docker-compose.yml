@@ -47,6 +47,7 @@ services:
       - redis
     ports:
       - "8080:8080"
+    user: "0:0"                       # Ejecuta como root para evitar problemas de permisos
     volumes:
       - ./dags:/opt/airflow/dags
       - ./logs:/opt/airflow/logs
@@ -91,6 +92,7 @@ services:
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
       KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_HEAP_OPTS: "-Xmx512M -Xms512M"
     ports:
       - "9092:9092"
     restart: always
