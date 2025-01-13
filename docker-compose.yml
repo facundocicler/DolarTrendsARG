@@ -96,7 +96,7 @@ services:
     deploy:
       resources:
         limits:
-          memory: 256M
+          memory: 128M
           cpus: "0.25"
     restart: "no"
 
@@ -110,8 +110,8 @@ services:
     deploy:
       resources:
         limits:
-          memory: 256M
-          cpus: "0.5"
+          memory: 128M
+          cpus: "0.25"
     restart: always
 
   kafka:
