@@ -25,6 +25,7 @@ services:
 
   airflow-webserver:
     image: apache/airflow:2.9.0
+    user: "0:0" # Ejecuta como "root"
     environment:
       AIRFLOW__CORE__EXECUTOR: LocalExecutor
       AIRFLOW__CORE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@postgres/airflow
@@ -50,6 +51,7 @@ services:
 
   airflow-scheduler:
     image: apache/airflow:2.9.0
+    user: "0:0" # Ejecuta como "root"
     environment:
       AIRFLOW__CORE__EXECUTOR: LocalExecutor
       AIRFLOW__CORE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@postgres/airflow
