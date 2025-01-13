@@ -96,7 +96,7 @@ services:
     deploy:
       resources:
         limits:
-          memory: 128M
+          memory: 256M
           cpus: "0.25"
     restart: "no"
 
