@@ -93,6 +93,11 @@ services:
           --role Admin \
           --email admin@example.com \
           --password admin
+    deploy:
+      resources:
+        limits:
+          memory: 256M
+          cpus: "0.25"
     restart: "no"
 
   zookeeper:
@@ -124,8 +129,8 @@ services:
     deploy:
       resources:
         limits:
-          memory: 256M
-          cpus: "0.5"
+          memory: 512M
+          cpus: "1.0"
     restart: always
 
 volumes:
